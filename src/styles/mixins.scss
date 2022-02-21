@@ -1,0 +1,23 @@
+@mixin mobile-flex-row {
+    @media screen {
+        
+    }
+}
+
+
+@mixin media($width) {
+    @media only screen and (max-width: $width) {
+      @content;
+    }
+  }
+  
+  @mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @mixin flex-start {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
