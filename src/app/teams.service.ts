@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, take } from 'rxjs';
+import { BehaviorSubject, map, take } from 'rxjs';
 import { ILeague } from './interfaces/league.interface';
 import { ITeam } from './interfaces/team.interface';
 
@@ -9,7 +9,18 @@ import { ITeam } from './interfaces/team.interface';
 })
 export class TeamsService {
 
+  private _topTeams = new BehaviorSubject<ITeam[]>([])
+  private _topTeams$ =  this._topTeams.asObservable()
+
+
   constructor(private http: HttpClient) { 
+  }
+
+  getTopTeams(){
+    return this._topTeams$
+  }
+  setTopTeams(topTeams:ITeam[]){
+    return this._topTeams.next(topTeams);
   }
 
   async getLeagues(){
