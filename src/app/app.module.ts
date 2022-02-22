@@ -10,8 +10,9 @@ import { TeamItemComponent } from './components/team-item/team-item.component';
 import { TeamsListComponent } from './components/teams-list/teams-list.component';
 import { TopTeamsComponent } from './top-teams/top-teams.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HomePageComponent } from './components/home-page/home-page.component';
 @NgModule({
-  declarations: [AppComponent,LeagueTabsListComponent,TeamItemComponent,TeamsListComponent, TopTeamsComponent],
+  declarations: [AppComponent,LeagueTabsListComponent,TeamItemComponent,TeamsListComponent, TopTeamsComponent, HomePageComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
