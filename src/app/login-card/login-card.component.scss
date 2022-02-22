@@ -1,0 +1,13 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.card{
+    width: 200px;
+    height: 300px;
+    @include card();
+    @include flex-between(column);
+}
+
+.form-control{
+    @include formControl();
+}

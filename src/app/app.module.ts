@@ -12,8 +12,10 @@ import { TopTeamsComponent } from './components/top-teams/top-teams.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginCardComponent } from './login-card/login-card.component';
 @NgModule({
-  declarations: [AppComponent,LeagueTabsListComponent,TeamItemComponent,TeamsListComponent, TopTeamsComponent, HomePageComponent, LoginPageComponent],
+  declarations: [AppComponent,LeagueTabsListComponent,TeamItemComponent,TeamsListComponent, TopTeamsComponent, HomePageComponent, LoginPageComponent, NavbarComponent, LoginCardComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
