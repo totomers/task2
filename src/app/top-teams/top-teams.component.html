@@ -1,9 +1,21 @@
-<ul class="top-teams-list">
-<li  *ngFor="let team of topTeams$|async">
-<img [src]="team.strTeamBadge" />
-<span class="name">
-    {{team.strTeam}}
-</span>
-<span class="button" (click)="removeFromTopTeams(team.idTeam)">X</span>
-</li>
-</ul>
+<div class="top-teams-card">
+
+    <h1>Top 5 Teams 
+ 
+        <i class="fa fa-star" style="color: goldenrod;"></i>
+    
+    </h1>
+    <ul class="top-teams-list">
+    <li  *ngFor="let team of topTeams$|async">
+    <img [src]="team.strTeamBadge" />
+    <span class="name">
+        {{team.strTeam}}
+    </span>
+    <span class="button" (click)="removeFromTopTeams(team.idTeam)"><i class="fa fa-remove" style="font-size:24px"></i></span>
+    </li>
+    </ul>
+
+    <p >No top team has been selected.</p>
+    
+
+</div>

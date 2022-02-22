@@ -11,20 +11,25 @@
     }
   }
   
-  @mixin flex-center {
+  @mixin flex-center($direction:row) {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: $direction;
   }
-  @mixin flex-start {
+  @mixin flex-start($direction:row)  {
     display: flex;
     justify-content: start;
     align-items: center;
+    flex-direction: $direction;
+
   }
-  @mixin flex-between {
+  @mixin flex-between($direction:row)  {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-direction: $direction;
+
   }
 
   @mixin logo ($size:50px) {
@@ -52,4 +57,14 @@
       0 100px 80px rgba(0, 0, 0, 0.12);
       background: rgb(245, 240, 240);
       border-radius: 5px;
+  }
+
+  @mixin iconButton($size:20px) {
+      @include flex-center();
+      width: $size;
+      height: $size;
+      padding: 3px;
+      border-radius: 50%;  
+      cursor: pointer;
+      transition: all 300ms ease-in;
   }

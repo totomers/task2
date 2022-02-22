@@ -3,6 +3,12 @@
 <div class="name">
     {{team?.strTeam}}
 </div>
-<button *ngIf="!((topTeamsHashMap$|async)?.hasOwnProperty(team.idTeam))" (click)="addToTopTeams()">add</button>
-<button *ngIf="(topTeamsHashMap$|async)?.hasOwnProperty(team.idTeam)"(click)="removeFromTopTeams()" >remove</button>
+<div *ngIf="!((topTeamsHashMap$|async)?.hasOwnProperty(team.idTeam))" (click)="addToTopTeams()" class="addButton" >
+    <i class="fa fa-add" ></i>
+    <i class="fa fa-star"></i>
+</div>
+<div *ngIf="(topTeamsHashMap$|async)?.hasOwnProperty(team.idTeam)"(click)="removeFromTopTeams()" class="removeButton" >
+
+    <i class="fa fa-remove" ></i>
+</div>
 </div>
