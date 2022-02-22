@@ -4,12 +4,17 @@
 .top-teams-card{
     @include card();
     padding: 6px;
+    margin: 30px 50px 100px 50px;
     @include flex-center(column);
     
     h1{
         color: rgb(82, 82, 82);
         margin: 0;
         padding: 0;
+    }
+    p{
+        margin:0;
+        padding:0;
     }
 }
 

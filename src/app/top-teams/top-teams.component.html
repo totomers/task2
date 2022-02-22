@@ -15,7 +15,7 @@
     </li>
     </ul>
 
-    <p >No top team has been selected.</p>
+    <p *ngIf="((topTeams$|async)?.length)===0" >- No top team has been selected -</p>
     
 
 </div>

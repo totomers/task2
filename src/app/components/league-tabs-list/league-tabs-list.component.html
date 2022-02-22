@@ -1,13 +1,18 @@
+<div class="tabs-card">
 
-<ul class="leagues">
-  <li *ngFor="let league of leagues">
-    <button [class.selected]="league === selectedLeague" type="button" (click)="onSelect(league)">
-      <span class="badge">{{league.idLeague}}</span>
-      <span class="name">{{league.strLeague}}</span>
-    </button>
-  </li>
-</ul>
+  <ul class="leagues">
+    <li *ngFor="let league of leagues">
+      <button [class.selected]="league === selectedLeague" type="button" (click)="onSelect(league)">
+        <span class="badge">{{league.idLeague}}</span>
+        <span class="name">{{league.strLeague}}</span>
+      </button>
+    </li>
+  </ul>
+  
+  <app-teams-list [league]="selectedLeague"></app-teams-list>
+  
+  
+  
 
-<app-teams-list [league]="selectedLeague"></app-teams-list>
-
+</div>
 

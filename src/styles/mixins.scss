@@ -24,6 +24,13 @@
     flex-direction: $direction;
 
   }
+  @mixin flex-end($direction:row)  {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: $direction;
+
+  }
   @mixin flex-between($direction:row)  {
     display: flex;
     justify-content: space-around;
