@@ -4,12 +4,12 @@
 
     <div class="form-control">
     <label>username</label>
-    <input type="text" [ngModel]="username" >
+    <input type="text" [(ngModel)]="username" >
     </div>
     <div class="form-control">
     <label>password</label>
-    <input type="password" [ngModel]="password" >
+    <input type="password" [(ngModel)]="password" >
     </div>
-    <button routerLink="/">Create</button>
+    <button (click)="register()">Create</button>
     <a routerLink="/login" >Already have an account</a>
     </div>

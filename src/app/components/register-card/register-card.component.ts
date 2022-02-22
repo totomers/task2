@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/account.service';
 
 @Component({
   selector: 'app-register-card',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterCardComponent implements OnInit {
   username:string;
   password:string;
-  constructor() { }
+  constructor(private accountService:AccountService) { }
 
   ngOnInit(): void {
   }
-
+  register(){
+    const user = {username:this.username,password:this.password}
+    this.accountService.register(user);
+  }
 }

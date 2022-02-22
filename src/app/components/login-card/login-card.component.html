@@ -4,13 +4,14 @@
 <h1>Login</h1>
 <div class="form-control">
 <label>username</label>
-<input type="text" [ngModel]="username" >
+<input type="text" [(ngModel)]="username" >
 </div>
 <div class="form-control">
 <label>password</label>
-<input type="password" [ngModel]="password" >
+<input type="password" [(ngModel)]="password" >
 </div>
-<button routerLink="/">Login</button>
+<p *ngIf="errorMessage.length>0">{{errorMessage}}</p>
+<button (click)="login()">Login</button>
 <a routerLink="/register" >Register</a>
 
 </div>
