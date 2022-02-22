@@ -11,7 +11,7 @@
     margin-top: 10px;
     font-weight: 500;
     transition: padding-left ease-in 100ms;
-    
+    border-radius: 4px;
     img{
     @include logo();
     }

@@ -1,4 +1,5 @@
 <div class="navbar">
-    <button routerLink="/login"> LOGOUT</button>
+    <button  (click)="logout()"> LOGOUT</button>
     <!-- <a routerLink="/login">LOGOUT</a> -->
+    <button [hidden]="user" >{{(user|json)}}</button>
 </div>

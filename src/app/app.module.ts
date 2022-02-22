@@ -9,7 +9,7 @@ import { LeagueTabsListComponent } from './components/league-tabs-list/league-ta
 import { TeamItemComponent } from './components/team-item/team-item.component';
 import { TeamsListComponent } from './components/teams-list/teams-list.component';
 import { TopTeamsComponent } from './components/top-teams/top-teams.component';
-import { AppRoutingModule } from './pages/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';

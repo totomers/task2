@@ -1,5 +1,6 @@
-<div class="teams-list" *ngIf="league">
 
+<div class="teams-list" *ngIf="league">
+  <div *ngIf="loading" class="spinner-container"><div class="spinner" ></div></div>
 
     <app-team-item *ngFor="let team of teams" [team]="team"></app-team-item>
   

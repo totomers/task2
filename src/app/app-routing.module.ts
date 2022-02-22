@@ -6,7 +6,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { AuthGuard } from './helpers/auth.guard';
 
-const routes:Routes = [{path:'',component:HomePageComponent},{path:"login",component:LoginPageComponent, canActivate:[AuthGuard]},{path:"register",component:RegisterPageComponent}]
+const routes:Routes = [{path:'',component:HomePageComponent,canActivate:[AuthGuard]},{path:"login",component:LoginPageComponent},{path:"register",component:RegisterPageComponent}]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

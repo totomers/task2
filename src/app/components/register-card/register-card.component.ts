@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AccountService } from 'src/app/account.service';
 
 @Component({
@@ -9,12 +10,14 @@ import { AccountService } from 'src/app/account.service';
 export class RegisterCardComponent implements OnInit {
   username:string;
   password:string;
-  constructor(private accountService:AccountService) { }
+  constructor(private accountService:AccountService,private  router:Router) { }
 
   ngOnInit(): void {
   }
-  register(){
+  async register(){
     const user = {username:this.username,password:this.password}
-    this.accountService.register(user);
+    await this.accountService.register(user);
+  await this.router.navigate(['/login']);
+
   }
 }

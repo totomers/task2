@@ -1,5 +1,18 @@
+@import "../../../styles/mixins.scss";
 .teams-list{
     background-color: rgba(41, 41, 138, 0.068);
     height: 400px;
     overflow-y: scroll;
 }
+
+.spinner-container{
+@include flex-center();
+height: 100%;
+}
+
+.spinner{
+    @include spinner();
+}
+
+
+  

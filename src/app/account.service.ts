@@ -9,7 +9,7 @@ import { IUser } from './interfaces/user.interface';
 })
 export class AccountService {
   private userSubject= new BehaviorSubject<IUser>(this._getUserFromLs());
-  user = this.userSubject.asObservable();
+  private _user$ = this.userSubject.asObservable();
 
   constructor( private router: Router, private http: HttpClient) {}
 
@@ -21,20 +21,24 @@ export class AccountService {
    get userValue(){
      return this.userSubject.getValue()
    }
-   setUserSubject(user:IUser){
-      this.userSubject.next(user);
+
+   getUser(){
+     console.log(this._user$)
+     return this._user$;
    }
 
-logout() {
+ 
+   setUserSubject(user:IUser){
+     return this.userSubject.next(user);
+   }
 
-    this.userSubject.next({username:"",password:""});
-    this.router.navigate(['/login']);
+ logout() {
+   this.setUserSubject({username:"",password:""});
 }
 
 register(user: IUser) {
   console.log(user);
   localStorage.setItem('user',JSON.stringify(user));
-  this.router.navigate(['/login']);
 }
 
 isUser(user:IUser):boolean{

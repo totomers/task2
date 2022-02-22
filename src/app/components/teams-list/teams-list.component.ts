@@ -12,6 +12,7 @@ import { TeamsService } from 'src/app/teams.service';
 export class TeamsListComponent implements OnInit ,OnChanges{
   @Input() league?: ILeague;
   teams:ITeam[];
+  loading :boolean = true;
   constructor(private teamService:TeamsService) { }
 
   ngOnInit(): void {
@@ -28,6 +29,7 @@ export class TeamsListComponent implements OnInit ,OnChanges{
       console.log(teams)
       if(teams)
       this.teams = teams.teams;
-    });
+      
+    }).finally(()=>{this.loading=false;});
   }
 }

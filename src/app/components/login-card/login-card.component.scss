@@ -6,6 +6,10 @@
     height: 300px;
     @include card();
     @include flex-between(column);
+    p{
+        text-align: center;
+        color: red
+    }
 }
 
 .form-control{
