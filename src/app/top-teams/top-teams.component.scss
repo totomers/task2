@@ -1,0 +1,25 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.top-teams-list{
+    width: 300px;
+    height: 300px;
+     @include card();
+    li{
+        width: 100%;
+        @include flex-between();
+        img{
+            @include logo(30px);
+        }
+        .name{
+            @include teamName();
+        }
+        .button{
+            display: inline-block;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.5),rotate(45deg);
+            }
+        }
+    }
+}

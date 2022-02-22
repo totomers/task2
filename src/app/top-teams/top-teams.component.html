@@ -1,0 +1,9 @@
+<ul class="top-teams-list">
+<li  *ngFor="let team of topTeams$|async">
+<img [src]="team.strTeamBadge" />
+<span class="name">
+    {{team.strTeam}}
+</span>
+<span class="button" (click)="removeFromTopTeams(team.idTeam)">X</span>
+</li>
+</ul>

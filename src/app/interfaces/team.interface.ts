@@ -3,3 +3,7 @@ export interface ITeam {
     strTeam:string;
     idTeam:string;
 }
+
+export interface ITeamHashMap{
+    [key:string]:boolean;
+}
