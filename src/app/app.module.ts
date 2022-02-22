@@ -9,12 +9,14 @@ import { LeagueTabsListComponent } from './components/league-tabs-list/league-ta
 import { TeamItemComponent } from './components/team-item/team-item.component';
 import { TeamsListComponent } from './components/teams-list/teams-list.component';
 import { TopTeamsComponent } from './top-teams/top-teams.component';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [AppComponent,LeagueTabsListComponent,TeamItemComponent,TeamsListComponent, TopTeamsComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
