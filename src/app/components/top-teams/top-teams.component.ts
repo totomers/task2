@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ITeam } from '../interfaces/team.interface';
-import { TeamsService } from '../teams.service';
+import { ITeam } from '../../interfaces/team.interface';
+import { TeamsService } from '../../teams.service';
 
 @Component({
   selector: 'app-top-teams',
