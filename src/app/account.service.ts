@@ -25,21 +25,8 @@ export class AccountService {
       this.userSubject.next(user);
    }
 
-//    login(user:IUser) {
-//      const isUser = this.authenticateUser(user);
-//      if(isUser){
-//       this.setUserSubject(user);
-//       this.router.navigate(['/']);
-//      }
-//      else{
-//        return false
-//      }
-
-// }
-
 logout() {
-    // remove user from local storage and set current user to null
-    // localStorage.removeItem('user');
+
     this.userSubject.next({username:"",password:""});
     this.router.navigate(['/login']);
 }
@@ -60,6 +47,11 @@ isUser(user:IUser):boolean{
 
 }
 
+deleteAccount(){
+  localStorage.removeItem('user');
+  localStorage.removeItem('topTeams');
+  this.router.navigate(['/login'])
+}
 
 
 
