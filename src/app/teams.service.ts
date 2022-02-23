@@ -1,23 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable, take } from 'rxjs';
+import { TOP_TEAMS } from './consts/team.variables';
 import { ILeague } from './interfaces/league.interface';
 import { ITeam, ITeamHashMap } from './interfaces/team.interface';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TeamsService {
-
-  private _topTeams = new BehaviorSubject<ITeam[]>(this._getTopTeamsFromLS())
+  private _topTeamsFromLs: ITeam[] = this.localStorage.getTopTeams();;
+  private _topTeams = new BehaviorSubject<ITeam[]>(this._topTeamsFromLs)
   private _topTeams$ =  this._topTeams.asObservable();  
-  private _topTeamsHashMap = new BehaviorSubject<ITeamHashMap>(this._createHashMap(this._getTopTeamsFromLS()));
+  private _topTeamsHashMap = new BehaviorSubject<ITeamHashMap>(this._createHashMap(this._topTeamsFromLs));
   private _topTeamsHashMap$ = this._topTeamsHashMap.asObservable();
 
-  private _getTopTeamsFromLS(){
-    const topTeamsStr = localStorage.getItem('topTeams');
-    return topTeamsStr? JSON.parse(topTeamsStr):[];
-  }
+
 
   private _createHashMap(teams:ITeam[]){
    return teams.reduce((p:any,c:any)=>{
@@ -26,8 +25,9 @@ export class TeamsService {
      },{} as ITeamHashMap);
   }
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private localStorage:LocalStorageService) { 
   }
+
 
   getTopTeams(){
     return this._topTeams$
@@ -37,7 +37,7 @@ getTopTeamsHashMap(){
 }
 
   setTopTeams(topTeams:ITeam[]){
-    localStorage.setItem('topTeams',JSON.stringify(topTeams)); //save to local storage
+    this.localStorage.setTopTeams(topTeams);
     this._topTeamsHashMap.next(this._createHashMap(topTeams));
     return this._topTeams.next(topTeams);
   }
