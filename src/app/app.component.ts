@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+sayHi(){
+  console.log("hi");
+}
+
   title = 'task2';
 }
