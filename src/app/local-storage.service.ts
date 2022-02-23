@@ -13,7 +13,7 @@ export class LocalStorageService {
     return strData? JSON.parse(strData):[];
   }
 
-  set(key:string,value:any){
+  set<T>(key:string,value:T){
     localStorage.setItem(key,JSON.stringify(value)); //save to local storage
   }
   getTopTeams(){

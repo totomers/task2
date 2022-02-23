@@ -16,8 +16,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginCardComponent } from './components/login-card/login-card.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { RegisterCardComponent } from './components/register-card/register-card.component';
+import { MapComponent } from './components/map/map.component';
+import { MapPageComponent } from './pages/map-page/map-page.component';
 @NgModule({
-  declarations: [AppComponent,LeagueTabsListComponent,TeamItemComponent,TeamsListComponent, TopTeamsComponent, HomePageComponent, LoginPageComponent, NavbarComponent, LoginCardComponent, RegisterPageComponent, RegisterCardComponent],
+  declarations: [AppComponent,LeagueTabsListComponent,TeamItemComponent,TeamsListComponent, TopTeamsComponent, HomePageComponent, LoginPageComponent, NavbarComponent, LoginCardComponent, RegisterPageComponent, RegisterCardComponent, MapComponent, MapPageComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
